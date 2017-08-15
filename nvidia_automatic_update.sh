@@ -27,7 +27,7 @@ fi
 
 set -e
 
-command -v nvidia-setings -v >/dev/null 2>&1 || askForDownload 
+command -v nvidia-settings -v >/dev/null 2>&1 || askForDownload 
 
 #get latest versions on computer and online
 currentVersion=`nvidia-settings -v | grep version | cut -d ' ' -f 4`
