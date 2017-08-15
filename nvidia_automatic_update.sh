@@ -4,7 +4,7 @@ download(){
 	curl http://us.download.nvidia.com/XFree86/Linux-x86_64/$latestLBOnline/NVIDIA-Linux-x86_64-$latestLBOnline.run -o /tmp/nvidiaupdate.run;
 	echo -e "File successfully downloaded.\nMarking as executable.";
 	chmod +x /tmp/nvidiaupdate.run;
-	sh ./NVIDIA-Linux-x86_64-$latestLBOnline.run;
+	sh /tmp/nvidiaupdate.run;
 }
 askForDownload()
 {
