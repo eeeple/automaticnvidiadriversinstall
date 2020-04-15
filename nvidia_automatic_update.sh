@@ -32,7 +32,7 @@ command -v nvidia-settings -v >/dev/null 2>&1 || askForDownload
 #get latest versions on computer and online
 currentVersion=`nvidia-settings -v | grep version | cut -d ' ' -f 4`
 echo -e "Current version : $currentVersion\nLooking for latest version available online..."
-latestLBOnline=`curl -s www.nvidia.com/object/unix.html | grep Linux\ x86_64 | cut -d '>' -f 5 | cut -d '<' -f 1`
+latestLBOnline=`curl -L -s www.nvidia.com/object/unix.html | grep -A2 "Linux\ x86_64" | grep "Long Lived" | cut -d '>' -f 2 | cut -d '<' -f 1`
 echo "Latest \"Long Branch\" available online : "$latestLBOnline
 
 
@@ -56,4 +56,3 @@ else
 		echo "Aborting !" ; exit 1;
 	fi
 fi
-
